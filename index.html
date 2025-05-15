@@ -3,37 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDJK Hunagry</title>
+    <title>SDJK Hungary - Kínai munkagépek forgalmazója</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <img src="kepek/logo.png" alt="" class="float-left">
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Kezdőlap</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gepek.html">Gépek</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="kapcsolat.html">Kapcsolat</a>
-            </li>
-          </ul>
+    <!-- Navigációs sáv -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="kepek/logo.png" alt="SDJK Hungary Logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Kezdőlap</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gépek
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="minikotro.html">Minikotró</a></li>
+                            <li><a class="dropdown-item" href="homlokrakodo.html">Homlokrakodó</a></li>
+                            <li><a class="dropdown-item" href="targonca.html">Targonca</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kapcsolat.html">Kapcsolat</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     
+    <!-- Page dimmer -->
+    <div class="page-dimmer"></div>
 
+    <!-- Carousel szekció -->
+    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://placeholder.pics/svg/1200x500/000000/FFFFFF/Minikotró" class="d-block w-100" alt="Minikotró">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Minikotró gépek</h5>
+                    <p>Kompakt méretű, nagy teljesítményű minikotró gépek szűk helyeken végzett munkákhoz.</p>
+                    <a href="minikotro.html" class="btn btn-primary">Részletek</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://placeholder.pics/svg/1200x500/000000/FFFFFF/Homlokrakodó" class="d-block w-100" alt="Homlokrakodó">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Homlokrakodó gépek</h5>
+                    <p>Nagy teljesítményű homlokrakodó gépek, ideálisak nagyobb földmunkákhoz.</p>
+                    <a href="homlokrakodo.html" class="btn btn-primary">Részletek</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://placeholder.pics/svg/1200x500/000000/FFFFFF/Targonca" class="d-block w-100" alt="Targonca">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Targoncák</h5>
+                    <p>Megbízható és sokoldalú targoncák a logisztikai és raktározási feladatok hatékony elvégzéséhez.</p>
+                    <a href="targonca.html" class="btn btn-primary">Részletek</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Előző</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Következő</span>
+        </button>
+    </div>
 
+    <!-- Rólunk szekció -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Rólunk</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>Az SDJK Hungary a kínai SDJK munkagépgyártó cég hivatalos magyarországi importőre. Cégünk több éves tapasztalattal rendelkezik a nehézgépek forgalmazásában.</p>
+                    <p>Célunk, hogy megfizethető, de mégis kiváló minőségű munkagépeket biztosítsunk ügyfeleink számára, valamint hogy teljes körű szervizszolgáltatást nyújtsunk.</p>
+                    <ul>
+                        <li>Megbízható gépek versenyképes áron</li>
+                        <li>Professzionális szervizszolgáltatás</li>
+                        <li>Gyors alkatrészellátás</li>
+                        <li>Szakértő tanácsadás</li>
+                    </ul>
+                    <p>Az általunk kínált SDJK gépek megfelelnek az Európai Unió összes minőségi és biztonsági követelményének, és rendkívül kedvező ár-érték arányt képviselnek. Célunk, hogy hosszú távú kapcsolatot építsünk ki ügyfeleinkkel, és teljes körű támogatást nyújtsunk a gépek teljes élettartama során.</p>
+                    <a href="kapcsolat.html" class="btn btn-primary mt-3">Kapcsolatfelvétel</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://placeholder.pics/svg/500x300/DEDEDE/555555/SDJK%20Hungary" alt="SDJK Hungary Csapat" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-
-
-
-
+    <!-- Lábléc -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="kepek/logowhite.png" alt="SDJK Hungary Logo" class="footer-logo">
+                    <p>Az SDJK kínai munkagépek hivatalos magyarországi importőre.</p>
+                </div>
+                <div class="col-lg-4 footer-links">
+                    <h5>Gyorslinkek</h5>
+                    <ul>
+                        <li><a href="index.html">Kezdőlap</a></li>
+                        <li><a href="minikotro.html">Minikotró</a></li>
+                        <li><a href="homlokrakodo.html">Homlokrakodó</a></li>
+                        <li><a href="targonca.html">Targonca</a></li>
+                        <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 footer-links">
+                    <h5>Kapcsolat</h5>
+                    <ul>
+                        <li>Cím: 1234 Budapest, Példa utca 123.</li>
+                        <li>Telefon: +36 1 234 5678</li>
+                        <li>Email: info@sdjk-hungary.hu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row footer-bottom text-center">
+                <div class="col-12">
+                    <p>&copy; 2025 SDJK Hungary. Minden jog fenntartva.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
