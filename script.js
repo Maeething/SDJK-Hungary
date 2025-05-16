@@ -1,6 +1,5 @@
-// SDJK Hungary weboldal script fájl
+// SDJK Hungary weboldal script fájl - simplified mobile dropdown fix
 
-// Bootstrap inicializálás és egyéb műveletek
 document.addEventListener('DOMContentLoaded', function() {
     // Bootstrap tooltipek inicializálása
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -22,6 +21,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Get navbar toggle button (hamburger icon)
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    // Close navbar when clicking outside of it on mobile
+    document.addEventListener('click', function(event) {
+        // Only apply this on mobile when navbar is expanded
+        if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+            // If click target is not within the navbar and not the toggler button itself
+            if (!navbarCollapse.contains(event.target) && event.target !== navbarToggler) {
+                // Create and dispatch a click event on the navbar toggler to close the menu
+                navbarToggler.click();
+            }
+        }
+    });
+    
+    // Fix dropdown toggle behavior on mobile
+    if (window.innerWidth < 992) {
+        // Remove data-bs-toggle attribute to disable bootstrap's built-in behavior
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.removeAttribute('data-bs-toggle');
+            
+            // Add our own click handler
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const dropdownMenu = this.nextElementSibling;
+                
+                // Toggle the dropdown
+                if (dropdownMenu.style.display === 'block') {
+                    dropdownMenu.style.display = 'none';
+                } else {
+                    // Close any other open dropdowns first
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                    
+                    // Open this dropdown
+                    dropdownMenu.style.display = 'block';
+                }
+            });
+        });
+    }
+    
     // Sima görgetés a belső linkekhez
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -33,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100, 
+                    top: targetElement.offsetTop - 100,
                     behavior: 'smooth'
                 });
             }
@@ -61,5 +105,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     console.log('SDJK Hungary weboldal betöltve');
-}); 
-
+});
