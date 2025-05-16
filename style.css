@@ -316,15 +316,21 @@ footer {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
+    /* Remove the rules that force dropdowns to always display */
     .dropdown-menu {
         min-width: 100%;
-        display: block;
+        /* Remove display: block */
         position: static;
-        transform: none;
+        transform: none !important;
+        box-shadow: none;
+        border-left: 3px solid var(--secondary-color);
+        margin-left: 10px;
+        padding-left: 10px;
     }
     
-    .dropdown-menu.show {
-        display: block;
+    /* This ensures dropdowns only appear when toggled */
+    .dropdown-menu:not(.show) {
+        display: none;
     }
     
     .dropdown-menu .machine-category {
@@ -356,3 +362,4 @@ footer {
 .location-card:first-child {
     margin-bottom: 20px;
 } 
+

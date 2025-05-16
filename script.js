@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100,
+                    top: targetElement.offsetTop - 100, 
                     behavior: 'smooth'
                 });
             }
@@ -62,3 +62,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('SDJK Hungary weboldal betöltve');
 }); 
+
