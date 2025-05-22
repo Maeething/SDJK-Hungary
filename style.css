@@ -481,3 +481,98 @@ footer {
     }
 }
 
+/* Hide carousel on phones (screen width < 768px) */
+@media (max-width: 767px) {
+    #mainCarousel {
+        display: none !important;
+    }
+    
+    /* Optional: Add extra margin to content below navbar */
+    #about {
+        margin-top: 50px;
+    }
+}
+
+
+
+/* Mobile Hero Image */
+.mobile-hero {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.mobile-hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .mobile-hero {
+        display: block !important;
+    }
+    
+    #mainCarousel {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-hero {
+        display: none !important;
+    }
+}
+
+
+
+
+/* Add to style.css */
+/* Card Image Optimization */
+.card {
+    height: 100%; /* Make cards equal height */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    object-fit: contain; /* Show full image */
+    height: 250px; /* Fixed height for all images */
+    padding: 2px;
+    background: #f8f9fa; /* Fallback background */
+}
+
+.card-body {
+    flex: 1; /* Equal card body height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Maintain aspect ratio */
+.card-img-container {
+    position: relative;
+    padding-top: 75%; /* 4:3 aspect ratio */
+    overflow: hidden;
+}
+
+.card-img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 200px;
+    }
+    
+    .card-img-container {
+        padding-top: 100%; /* Square ratio on mobile */
+    }
+}

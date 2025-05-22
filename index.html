@@ -46,6 +46,19 @@
     <!-- Page dimmer -->
     <div class="page-dimmer"></div>
 
+    <!-- Add this mobile image section ABOVE the carousel -->
+<div class="mobile-hero d-block d-md-none">
+    <img src="kepek/phonebannerfinal.png" 
+         alt="Mobile Hero Image" 
+         class="img-fluid"
+         style="margin-top: 80px"> <!-- Adjust margin to match navbar height -->
+</div>
+
+<!-- Modify existing carousel to hide on mobile -->
+<div id="mainCarousel" class="carousel slide carousel-fade d-none d-md-block" data-bs-ride="carousel">
+    <!-- Keep existing carousel content -->
+</div>
+
     <!-- Carousel szekció -->
     <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -98,10 +111,10 @@
                         <li>Szakértő tanácsadás</li>
                     </ul>
                     <p>Az általunk kínált SDJK gépek megfelelnek az Európai Unió összes minőségi és biztonsági követelményének, és rendkívül kedvező ár-érték arányt képviselnek. Célunk, hogy hosszú távú kapcsolatot építsünk ki ügyfeleinkkel, és teljes körű támogatást nyújtsunk a gépek teljes élettartama során.</p>
-                    <a href="kapcsolat.html" class="btn btn-primary mt-3">Kapcsolatfelvétel</a>
+                    <a href="kapcsolat.html" class="btn btn-primary mt-3 rounded">Kapcsolatfelvétel</a>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://placeholder.pics/svg/500x300/DEDEDE/555555/SDJK%20Hungary" alt="SDJK Hungary Csapat" class="img-fluid rounded">
+                <div class="col-lg-6" style="margin-top: 75px;">
+                    <img src="kepek/KAPCS.webp" alt="SDJK Hungary Csapat" class="img-fluid rounded">
                 </div>
             </div>
         </div>
